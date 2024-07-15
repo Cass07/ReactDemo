@@ -1,0 +1,33 @@
+.basicTable{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width : 60%;
+  font-size : 1.2em;
+  margin-left : 20%;
+
+  tr{
+    border-bottom : 2px solid #dfdfdf;
+    &:last-child{
+      border-bottom : 0;
+    }
+  }
+
+  thead tr{
+    background-color : #338a76;
+    color : #FFF;
+  }
+
+  tr>th, tr>td{
+    vertical-align : middle;
+    text-align : center;
+    padding: 5px 1px;
+    word-break: keep-all;
+    &.score{
+      font-variant-numeric: tabular-nums;
+      -moz-font-feature-settings: "tnum";
+      -webkit-font-feature-settings: "tnum";
+      font-feature-settings: "tnum";
+      text-align : right;
+    }
+  }
+}

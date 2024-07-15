@@ -1,0 +1,80 @@
+$blue : #228be6;
+$yellow : #d5bd4b;
+$red : #d35050;
+
+@mixin button_color($color){
+  background: $color;
+  border: 1px solid #00000000;
+
+  &:hover{
+    background: lighten($color, 10%);
+  }
+
+  &:active{
+    background: darken($color, 10%);
+  }
+  &.outline{
+    color : $color;
+    background: none;
+    border : 1px solid $color;
+    &:hover{
+      background: $color;
+      color : white;
+    }
+    &:active{
+      background: darken($color, 10%);
+      color : white;
+    }
+  }
+}
+
+.Button{
+  display : inline-flex;
+  color : white;
+  font-weight : bold;
+  outline : none;
+  border-radius: 4px;
+  border : none;
+  cursor : pointer;
+  text-align : center;
+
+  &.large{
+    padding : 0.7rem 1rem;
+    font-size : 1.25rem;
+  }
+
+  &.medium {
+    padding : 0.5rem 1rem;
+    font-size : 1rem;
+  }
+
+  &.small{
+    padding : 0.3rem 1rem;
+    font-size : 0.875rem;
+  }
+
+  &.blue{
+    @include button_color($blue);
+  }
+
+  &.yellow{
+    @include button_color($yellow);
+  }
+
+  &.red{
+    @include button_color($red);
+  }
+
+  & + &{
+    margin-left : 1rem;
+  }
+
+  &.fullWidth{
+    width : 100%;
+    justify-content: center;
+    & + &{
+      margin-left : 0;
+      margin-top : 1rem;
+    }
+  }
+}
